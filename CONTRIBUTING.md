@@ -1,31 +1,24 @@
 # Contributing
 
-## Development flow
+Thanks for your interest in improving this public blueprint.
 
-1. Create a branch from `main`.
-   - Branch prefixes: `feat/*`, `fix/*`, `chore/*`, `docs/*`.
-2. Make focused, reviewable changes.
-3. Run quality checks:
-   ```bash
-   npm run lint
-   npm run test
-   npm run build
-   npm run prisma:validate
-   npm run smoke
-   ```
-4. Open a pull request using the repository template.
+## Scope
+- Keep all examples sanitized and fictional.
+- Do not add real credentials, personal data, or private infrastructure details.
+- Prefer small, focused pull requests.
 
-## Standards
+## Local Development
+1. Copy env templates:
+   - `cp .env.example .env`
+   - `cp backend/.env.example backend/.env`
+   - `cp frontend/.env.example frontend/.env`
+2. Start stack:
+   - `docker compose up --build`
+3. Run smoke test:
+   - `node scripts/mvp-smoke.js`
 
-- Keep code and docs in English.
-- Prefer small PRs with clear rationale.
-- Include migration notes for schema changes.
-
-## Commit style
-
-Conventional Commits are enforced:
-
-- `feat:`
-- `fix:`
-- `chore:`
-- `docs:`
+## Pull Request Checklist
+- [ ] Docs updated when behavior changes.
+- [ ] No secrets or production identifiers added.
+- [ ] API and UI still pass local smoke checks.
+- [ ] Compose config remains runnable for first-time users.

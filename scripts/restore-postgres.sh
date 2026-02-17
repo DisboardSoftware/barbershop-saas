@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [[ $# -lt 1 ]]; then
-  echo "Usage: $0 <backup-file.sql>"
+if [[ $# -ne 1 ]]; then
+  echo "Usage: bash scripts/restore-postgres.sh ./backups/<file>.sql"
   exit 1
 fi
 
@@ -12,9 +12,10 @@ if [[ ! -f "$BACKUP_FILE" ]]; then
   exit 1
 fi
 
-DB_USER="${POSTGRES_USER:-barbershop}"
-DB_NAME="${POSTGRES_DB:-barbershop_saas}"
+POSTGRES_DB="${POSTGRES_DB:-barbershop_crm}"
+POSTGRES_USER="${POSTGRES_USER:-app_user}"
 
-docker compose exec -T postgres psql -U "$DB_USER" "$DB_NAME" < "$BACKUP_FILE"
+echo "Restoring backup from: $BACKUP_FILE"
+docker compose exec -T postgres psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" < "$BACKUP_FILE"
 
-echo "Restore completed from $BACKUP_FILE"
+echo "Restore completed"

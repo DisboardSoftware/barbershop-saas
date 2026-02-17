@@ -1,13 +1,13 @@
 FROM node:20-alpine
-
 WORKDIR /app
 
-COPY package.json ./
+COPY package.json package-lock.json* ./
 RUN npm install
 
-COPY . .
+COPY prisma ./prisma
 RUN npx prisma generate
 
-EXPOSE 3001
+COPY src ./src
 
-CMD ["sh", "-c", "npx prisma db push && npm run prisma:seed && npm start"]
+EXPOSE 3001
+CMD ["npm", "run", "start"]

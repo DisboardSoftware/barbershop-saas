@@ -1,52 +1,20 @@
-const BASE_URL = process.env.SMOKE_BASE_URL || 'http://localhost:8080';
+const baseUrl = process.env.SMOKE_API_URL || 'http://localhost:3001/api';
 
-async function checkHealth() {
-  const res = await fetch(`${BASE_URL}/api/health`);
-  if (!res.ok) throw new Error(`health failed: ${res.status}`);
-  const payload = await res.json();
-  if (!payload.ok) throw new Error('health payload not ok');
-}
-
-async function signIn() {
-  const res = await fetch(`${BASE_URL}/api/auth/sign-in`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      email: process.env.SMOKE_EMAIL || 'admin@local.test',
-      password: process.env.SMOKE_PASSWORD || 'admin123'
-    })
-  });
-
-  if (!res.ok) {
-    throw new Error(`sign-in failed: ${res.status}`);
+async function run() {
+  const response = await fetch(`${baseUrl}/health`);
+  if (!response.ok) {
+    throw new Error(`Health check failed with status ${response.status}`);
   }
 
-  return res.json();
-}
-
-async function me(token) {
-  const res = await fetch(`${BASE_URL}/api/auth/me`, {
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  });
-
-  if (!res.ok) {
-    throw new Error(`me failed: ${res.status}`);
+  const payload = await response.json();
+  if (payload.status !== 'healthy') {
+    throw new Error(`Unexpected health status: ${JSON.stringify(payload)}`);
   }
 
-  const payload = await res.json();
-  if (!payload.user) throw new Error('missing user from /auth/me');
+  console.log('Smoke test passed:', payload);
 }
 
-(async () => {
-  try {
-    await checkHealth();
-    const auth = await signIn();
-    await me(auth.token);
-    console.log('Smoke test passed');
-  } catch (error) {
-    console.error('Smoke test failed:', error.message);
-    process.exit(1);
-  }
-})();
+run().catch((error) => {
+  console.error('Smoke test failed:', error.message);
+  process.exit(1);
+});
