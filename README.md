@@ -1,61 +1,51 @@
 # Barbershop SaaS
 
-Vertical SaaS platform designed for appointment-driven barbershop operations.
-
-Developed and operated by Disboard Software under Exceeds Group.
+Public showcase repository for a production-minded CRM platform focused on appointment-driven barbershop operations.
 
 ---
 
 ## Overview
 
-Barbershop SaaS is a structured management and scheduling platform focused on operational clarity, appointment coordination, and service workflow optimization.
-
-The platform is designed to standardize service-led shop operations while maintaining flexibility per location.
+This repository provides two complementary views:
+- Institutional and product-facing overview (this file)
+- Public technical blueprint and runnable baseline (`README.public.md`)
 
 ---
 
 ## Core Capabilities
 
-- Public scheduling interface (no client login required)
-- Service-based availability logic
-- Professional-based time slot allocation
-- Internal management dashboard
-- Financial tracking and operational metrics
-- Staff performance visibility
+- Appointment and availability workflows
+- Public booking entry point
+- Internal operational dashboard baseline
+- Reporting and growth-oriented operational visibility
 
 ---
 
 ## Architecture Principles
 
-- Multi-tenant SaaS model
-- API-first backend architecture
-- Containerized deployment (Docker-first)
-- CI/CD standardized pipeline
-- Relational database governance
+- Modular monolith backend + SPA frontend
+- API-first service boundaries
+- Containerized local runtime (`frontend`, `backend`, `postgres`, `minio`)
+- Security-first publication model (sanitized by default)
 
-See `ARCHITECTURE.md` for details.
-
----
-
-## Product Scope
-
-The product focuses on structured workflow standardization for barbershops operating in appointment-based environments.
-
-See `PRODUCT_SCOPE.md` for boundaries and exclusions.
+See `BLUEPRINT.md` for the complete architecture and controls.
 
 ---
 
-## Status
+## Technical Blueprint
 
-Active development phase.
-
-Current focus:
-- Feature stabilization
-- Infrastructure consolidation
-- Controlled rollout preparation
+For implementation details, local execution, operations, and publication safeguards:
+- `README.public.md`
+- `BLUEPRINT.md`
+- `docs/BACKUP_RESTORE.md`
+- `docs/MVP_GO_LIVE_CHECKLIST.md`
 
 ---
 
-## Governance
+## Security and Governance
 
-Operated under Disboard Software standards and Exceeds Group governance principles.
+- Responsible disclosure: `SECURITY.md`
+- Contribution guidelines: `CONTRIBUTING.md`
+- License: `LICENSE` (MIT)
+
+All sample values in this repository are fictional and sanitized for public use.
