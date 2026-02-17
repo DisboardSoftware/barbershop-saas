@@ -1,26 +1,24 @@
 # Security Policy
 
+## Supported Versions
+This repository is a public architectural baseline and sample implementation.
+Security fixes are applied to the latest `main` branch.
+
 ## Reporting a Vulnerability
+Please report vulnerabilities privately instead of creating a public issue.
 
-Please report vulnerabilities privately to the Disboard Software maintainers.
+- Contact: `<CHANGE_ME_SECURITY_CONTACT_EMAIL>`
+- Subject: `Security report: barbershop-crm-blueprint-public`
+- Include:
+  - Affected file/endpoint
+  - Reproduction steps
+  - Impact assessment
+  - Suggested remediation (if available)
 
-- Do not open public issues for sensitive vulnerabilities.
-- Include reproduction steps, impact, and suggested remediation if possible.
+## Response Targets
+- Initial acknowledgement: within 3 business days
+- Triage decision: within 7 business days
+- Remediation timeline: based on severity and exploitability
 
-## Security Baseline
-
-- Session tokens are persisted in database and revoked on sign-out.
-- Passwords are stored as bcrypt hashes.
-- Upload pipeline uses MinIO with controlled bucket access.
-- CI includes CodeQL analysis.
-- Commit history and PRs should be reviewed for secret exposure before merge.
-- Secret scanning baseline:
-  - GitHub Advanced Security may not be enabled in all environments.
-  - Local and CI policy relies on strict `.gitignore`, environment templates, and review discipline.
-  - A dedicated secret scanning workflow can be added when platform capability is enabled.
-
-## Response Expectations
-
-- Initial triage within 3 business days.
-- Mitigation plan shared after impact confirmation.
-- Patch release timelines depend on severity.
+## Safe Harbor
+Good-faith security research is welcomed. Do not access or alter data you do not own.

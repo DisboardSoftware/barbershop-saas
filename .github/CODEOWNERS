@@ -1,8 +1,0 @@
-* @Kllys
-
-backend/** @Kllys
-frontend/** @Kllys
-infra/** @Kllys
-docker-compose.yml @Kllys
-.github/workflows/** @Kllys
-docs/standards-compliance.md @Kllys

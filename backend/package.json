@@ -1,34 +1,22 @@
 {
-  "name": "backend",
+  "name": "barbershop-crm-blueprint-backend",
   "version": "0.1.0",
   "private": true,
-  "main": "server.js",
+  "type": "module",
+  "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js",
-    "prisma:generate": "prisma generate",
-    "prisma:validate": "DATABASE_URL=${DATABASE_URL:-postgresql://barbershop:barbershop@localhost:5432/barbershop_saas?schema=public} prisma validate",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:seed": "node prisma/seed.js",
-    "lint": "eslint .",
-    "lint:files": "eslint --max-warnings=0",
-    "test": "echo 'No backend tests configured yet'"
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "build": "echo 'No backend build step required'",
+    "lint": "echo 'TODO: add eslint config for backend'",
+    "test": "echo 'TODO: add backend tests'"
   },
   "dependencies": {
-    "@prisma/client": "^7.4.0",
-    "bcryptjs": "^2.4.3",
+    "@prisma/client": "^6.3.1",
     "cors": "^2.8.5",
-    "dotenv": "^17.3.1",
-    "express": "^4.21.2",
-    "express-rate-limit": "^7.5.0",
-    "minio": "^8.0.5",
-    "morgan": "^1.10.1",
-    "multer": "^2.0.2",
-    "nanoid": "^3.3.7"
+    "express": "^4.21.2"
   },
   "devDependencies": {
-    "eslint": "^8.57.1",
-    "nodemon": "^3.1.10",
-    "prisma": "^6.14.0"
+    "prisma": "^6.3.1"
   }
 }

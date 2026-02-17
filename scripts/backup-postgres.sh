@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-mkdir -p backups
-TS="$(date +%Y%m%d-%H%M%S)"
-OUT="backups/postgres-${TS}.sql"
+TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
+BACKUP_DIR="${BACKUP_DIR:-./backups}"
+mkdir -p "$BACKUP_DIR"
 
-DB_USER="${POSTGRES_USER:-barbershop}"
-DB_NAME="${POSTGRES_DB:-barbershop_saas}"
+POSTGRES_DB="${POSTGRES_DB:-barbershop_crm}"
+POSTGRES_USER="${POSTGRES_USER:-app_user}"
+OUTPUT_FILE="$BACKUP_DIR/postgres_${TIMESTAMP}.sql"
 
-docker compose exec -T postgres pg_dump -U "$DB_USER" "$DB_NAME" > "$OUT"
+echo "Creating backup: $OUTPUT_FILE"
+docker compose exec -T postgres pg_dump -U "$POSTGRES_USER" "$POSTGRES_DB" > "$OUTPUT_FILE"
 
-echo "Backup created at $OUT"
+echo "Backup completed: $OUTPUT_FILE"
