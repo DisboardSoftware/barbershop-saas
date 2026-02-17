@@ -24,7 +24,7 @@ app.use(express.json());
 
 app.get('/api', (_req, res) => {
   res.json({
-    service: 'barbershop-crm-blueprint-backend',
+    service: 'barbershop-saas-blueprint-backend',
     status: 'ok',
     version: '0.1.0'
   });

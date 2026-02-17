@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <main style={{ fontFamily: 'system-ui, sans-serif', padding: '2rem', maxWidth: 720, margin: '0 auto' }}>
-      <h1>Barbershop CRM Blueprint</h1>
+      <h1>Barbershop SaaS Blueprint</h1>
       <p>Public-safe frontend baseline connected to backend health endpoint.</p>
 
       {state.loading && <p>Checking API health...</p>}

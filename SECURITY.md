@@ -8,7 +8,7 @@ Security fixes are applied to the latest `main` branch.
 Please report vulnerabilities privately instead of creating a public issue.
 
 - Contact: `<CHANGE_ME_SECURITY_CONTACT_EMAIL>`
-- Subject: `Security report: barbershop-crm-blueprint-public`
+- Subject: `Security report: barbershop-saas-blueprint-public`
 - Include:
   - Affected file/endpoint
   - Reproduction steps

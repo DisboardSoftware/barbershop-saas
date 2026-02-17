@@ -1,6 +1,6 @@
-# Barbershop CRM - Public Technical Showcase
+# Barbershop SaaS - Public Technical Showcase
 
-Public-safe technical presentation of architecture, infrastructure, and engineering standards for a Barbershop CRM baseline.
+Public-safe technical presentation of architecture, infrastructure, and engineering standards for a barbershop SaaS baseline.
 
 ## Executive Overview
 - Architecture style: modular monolith backend + React SPA frontend

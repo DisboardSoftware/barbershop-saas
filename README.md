@@ -1,6 +1,6 @@
 # Barbershop SaaS
 
-Public showcase repository for a production-minded CRM platform focused on appointment-driven barbershop operations.
+Public showcase repository for a production-minded SaaS platform focused on appointment-driven barbershop operations.
 
 ---
 

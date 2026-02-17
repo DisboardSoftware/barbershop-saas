@@ -1,7 +1,7 @@
-# Project Blueprint - Barbershop CRM (Public)
+# Project Blueprint - Barbershop SaaS (Public)
 
 ## 1. Purpose
-This document provides a sanitized, market-facing technical blueprint for a Barbershop CRM platform.
+This document provides a sanitized, market-facing technical blueprint for a barbershop SaaS platform.
 It balances architectural transparency with strict removal of private or sensitive details.
 
 ## 2. System Snapshot

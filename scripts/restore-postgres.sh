@@ -12,7 +12,7 @@ if [[ ! -f "$BACKUP_FILE" ]]; then
   exit 1
 fi
 
-POSTGRES_DB="${POSTGRES_DB:-barbershop_crm}"
+POSTGRES_DB="${POSTGRES_DB:-barbershop_saas}"
 POSTGRES_USER="${POSTGRES_USER:-app_user}"
 
 echo "Restoring backup from: $BACKUP_FILE"
